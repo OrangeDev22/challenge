@@ -17,7 +17,7 @@ function BlogList() {
   useEffect(() => {
     if (!loading) {
       const { posts } = data;
-      console.log(posts.data.length);
+      console.log(posts.data);
       setMaxPage(posts.data.length / MAX_PER_PAGE);
       setBlogs(posts.data);
     }
@@ -33,7 +33,7 @@ function BlogList() {
   };
 
   return (
-    <div>
+    <div className="blog_list">
       {blogs.slice(pageStart, pageEnd).map(({ id, title, body }) => (
         <Blog title={title} body={body} key={id} />
       ))}

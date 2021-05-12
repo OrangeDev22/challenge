@@ -12,9 +12,10 @@ export const PaginationControl: React.FC<PaginationProps> = ({
   handlePageChange,
 }) => {
   return (
-    <div>
+    <div className="pagination_control">
       {page > 0 && (
         <input
+          className="input_button"
           type="submit"
           value="Previous"
           onClick={() => handlePageChange(page - 1)}
@@ -23,7 +24,9 @@ export const PaginationControl: React.FC<PaginationProps> = ({
       {page < maxPage - 1 && (
         <input
           type="submit"
+          className="input_button"
           value="Next"
+          style={{ marginLeft: "auto" }}
           onClick={() => handlePageChange(page + 1)}
         />
       )}

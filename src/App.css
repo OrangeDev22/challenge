@@ -2,3 +2,42 @@ body {
   color: white !important;
   background-color: #1a1a1d !important;
 }
+
+.blog_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+  border-bottom: 2px gray solid;
+}
+
+.blog_buttons_container {
+  margin-left: auto;
+  margin-bottom: 2em;
+}
+
+.input_button {
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 162, 255);
+  margin: 4px 2px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.input_button.delete {
+  color: red;
+}
+
+.pagination_control {
+  margin: 02em;
+}
+
+.pagination_control {
+  display: flex;
+}

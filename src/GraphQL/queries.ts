@@ -6,6 +6,7 @@ export const GET_ALL_BLOGS = gql`
       data {
         id
         title
+        body
       }
       meta {
         totalCount
