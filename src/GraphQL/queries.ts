@@ -1,12 +1,11 @@
 import { gql } from "@apollo/client";
 
 export const GET_ALL_BLOGS = gql`
-  query {
-    posts {
+  query ($options: PageQueryOptions) {
+    posts(options: $options) {
       data {
         id
         title
-        body
       }
       meta {
         totalCount
