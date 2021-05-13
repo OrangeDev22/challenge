@@ -3,6 +3,10 @@ body {
   background-color: #1a1a1d !important;
 }
 
+.App {
+  margin: 2em;
+}
+
 .blog_list {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,6 @@ body {
 .blog {
   display: flex;
   flex-direction: column;
-  margin: 2em;
   border-bottom: 2px gray solid;
 }
 
@@ -35,10 +38,6 @@ body {
 }
 
 .pagination_control {
-  margin: 02em;
-}
-
-.pagination_control {
   display: flex;
 }
 
@@ -46,7 +45,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  margin: 2em;
 }
 
 input[type="text"] {

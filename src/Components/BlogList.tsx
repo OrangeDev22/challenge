@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client";
 import { GET_ALL_BLOGS } from "../GraphQL/queries";
 import { PaginationControl } from "./PaginationControl";
 import { FormComponent } from "./FormComponent";
+import { v4 as uuidv4 } from "uuid";
 
 const MAX_PER_PAGE = 10;
 
@@ -50,7 +51,7 @@ function BlogList() {
           title={title}
           body={body}
           setBlogs={setBlogs}
-          key={index + pageStart * page}
+          key={uuidv4()}
         />
       ))}
       <PaginationControl
@@ -58,7 +59,7 @@ function BlogList() {
         maxPage={maxPage}
         handlePageChange={handlePageChange}
       />
-      <h3 style={{ margin: "1em" }}>Create New Post</h3>
+      <h3 style={{ margin: "1em 0" }}>Create New Post</h3>
       <FormComponent title="" body="" type="new_post" setBlogs={setBlogs} />
     </div>
   );

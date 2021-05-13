@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DELETE_BLOG } from "../GraphQL/Mutations";
 import { useMutation } from "@apollo/client";
 import { FormComponent } from "./FormComponent";
@@ -17,7 +17,7 @@ interface BlogProps {
 }
 
 export const Blog: React.FC<BlogProps> = ({ id, title, body, setBlogs }) => {
-  const [deleteBlog, { error }] = useMutation(DELETE_BLOG);
+  const [deleteBlog, { error, data, loading }] = useMutation(DELETE_BLOG);
   const [showForm, setShowForm] = useState(false);
 
   const deleteBlogHandler = (id: string) => {
@@ -26,13 +26,14 @@ export const Blog: React.FC<BlogProps> = ({ id, title, body, setBlogs }) => {
         id: id,
       },
     });
-
-    if (error) {
-      console.log(error);
-    } else {
-      setBlogs((prev) => prev.filter((blog) => blog.id !== id));
-    }
   };
+
+  useEffect(() => {
+    if (data) {
+      const { deletePost } = data;
+      deletePost && setBlogs((prev) => prev.filter((blog) => blog.id !== id));
+    }
+  }, [data]);
 
   return (
     <div className="blog">
