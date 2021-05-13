@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   border-bottom: 2px gray solid;
+  margin-top: 2em;
 }
 
 .blog_buttons_container {
