@@ -29,7 +29,7 @@ export const FormComponent: React.FC<FormComponentProps> = ({
     body.length > 150 ? body.slice(0, 150) : body
   );
   const [updateBlog] = useMutation(UPDATE_BLOG);
-  const [createBlog, { error, data }] = useMutation(CREATE_BLOG);
+  const [createBlog, { data }] = useMutation(CREATE_BLOG);
 
   const createBlogHandler = (e: React.SyntheticEvent): void => {
     e.preventDefault();

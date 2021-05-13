@@ -17,7 +17,7 @@ interface BlogProps {
 }
 
 export const Blog: React.FC<BlogProps> = ({ id, title, body, setBlogs }) => {
-  const [deleteBlog, { error, data, loading }] = useMutation(DELETE_BLOG);
+  const [deleteBlog, { data }] = useMutation(DELETE_BLOG);
   const [showForm, setShowForm] = useState(false);
 
   const deleteBlogHandler = (id: string) => {

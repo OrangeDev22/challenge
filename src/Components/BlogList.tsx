@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Blog } from "./Blog";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { GET_ALL_BLOGS } from "../GraphQL/queries";
 import { PaginationControl } from "./PaginationControl";
 import { FormComponent } from "./FormComponent";
@@ -15,7 +15,7 @@ function BlogList() {
     body: string;
   }
 
-  const { error, loading, data } = useQuery(GET_ALL_BLOGS);
+  const { loading, data } = useQuery(GET_ALL_BLOGS);
   const [blogs, setBlogs] = useState<blog[]>([]);
   const [page, setPage] = useState(0);
   const [pageStart, setPageStart] = useState(0);
