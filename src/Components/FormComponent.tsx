@@ -72,7 +72,7 @@ export const FormComponent: React.FC<FormComponentProps> = ({
         <input
           className="form_input"
           type="text"
-          maxLength={15}
+          maxLength={30}
           placeholder="Title"
           value={titleValue}
           onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
