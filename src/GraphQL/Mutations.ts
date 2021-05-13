@@ -15,3 +15,13 @@ export const CREATE_BLOG = gql`
     }
   }
 `;
+
+export const UPDATE_BLOG = gql`
+  mutation ($id: ID!, $input: UpdatePostInput!) {
+    updatePost(id: $id, input: $input) {
+      id
+      title
+      body
+    }
+  }
+`;

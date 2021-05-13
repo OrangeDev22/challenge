@@ -45,7 +45,13 @@ function BlogList() {
   return (
     <div className="blog_list">
       {blogs.slice(pageStart, pageEnd).map(({ id, title, body }, index) => (
-        <Blog id={id} title={title} body={body} key={id} setBlogs={setBlogs} />
+        <Blog
+          id={id}
+          title={title}
+          body={body}
+          setBlogs={setBlogs}
+          key={index + pageStart * page}
+        />
       ))}
       <PaginationControl
         page={page}
@@ -53,7 +59,7 @@ function BlogList() {
         handlePageChange={handlePageChange}
       />
       <h3 style={{ margin: "1em" }}>Create New Post</h3>
-      <FormComponent title="" body="" type="new_post" />
+      <FormComponent title="" body="" type="new_post" setBlogs={setBlogs} />
     </div>
   );
 }
