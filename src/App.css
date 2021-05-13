@@ -41,3 +41,37 @@ body {
 .pagination_control {
   display: flex;
 }
+
+.mutate_blog_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 2em;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 1px solid #c3073f;
+  padding: 8px;
+  border-radius: 5px;
+  outline: transparent;
+}
+
+button {
+  background: #c3073f;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: 10px;
+}
+
+.input_wrapper {
+  width: 100%;
+}
+
+.input_length {
+  color: #6a6a6e;
+  margin-bottom: 0.5rem;
+}

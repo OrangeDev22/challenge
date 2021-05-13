@@ -3,6 +3,7 @@ import { Blog } from "./Blog";
 import { useQuery, gql } from "@apollo/client";
 import { GET_ALL_BLOGS } from "../GraphQL/queries";
 import { PaginationControl } from "./PaginationControl";
+import { FormComponent } from "./FormComponent";
 
 const MAX_PER_PAGE = 10;
 
@@ -18,7 +19,7 @@ function BlogList() {
   const [page, setPage] = useState(0);
   const [pageStart, setPageStart] = useState(0);
   const [pageEnd, setPageEnd] = useState(10);
-  const [maxPage, setMaxPage] = useState(10);
+  const [maxPage, setMaxPage] = useState(0);
 
   useEffect(() => {
     if (!loading) {
@@ -51,6 +52,8 @@ function BlogList() {
         maxPage={maxPage}
         handlePageChange={handlePageChange}
       />
+      <h3 style={{ margin: "1em" }}>Create New Post</h3>
+      <FormComponent title="" body="" type="new_post" />
     </div>
   );
 }
